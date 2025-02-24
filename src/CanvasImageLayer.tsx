@@ -4,15 +4,15 @@ interface CanvasImageLayerProps {
   images: string[];
   width?: number;
   height?: number;
-  onDrown: Function;
-  id: number;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  onDrawn: Function;
 }
 
 const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
   images,
   width = 4096,
   height = 4096,
-  onDrown,
+  onDrawn
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -42,11 +42,15 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
       imageElements.forEach((img) => {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
       });
-      if(window.ReactNativeWebView) {     
-        window.ReactNativeWebView.postMessage(JSON.stringify({message:canvas.toDataURL()}))
-     }
+      // @ts-ignore
+      if (window.ReactNativeWebView) {
+        // @ts-ignore
+        window.ReactNativeWebView.postMessage(
+          JSON.stringify({ message: canvas.toDataURL() })
+        );
+      }
 
-      onDrown(canvas.toDataURL());
+      onDrawn(canvas.toDataURL());
     };
 
     loadImages();
