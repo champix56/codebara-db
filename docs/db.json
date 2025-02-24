@@ -1,0 +1,249 @@
+{
+  "theme": {
+    "id": 0,
+    "categorie": "smileys",
+    "serieName": "first",
+    "gen": 0,
+    "dateStart": "2025-02-23T00:00:00Z",
+    "dateEnd": null,
+    "startUrl": "https://champix56.github.io/codebara-db",
+    "startUrldev": "http://localhost:5173",
+    "assetsWidth":4096,
+    "assetsHeight":4096,
+    "deck": {
+      "frontUrl": "/codEbara/front.png",
+      "backUrl": "/codEbara/back.png",
+      "width": 2370,
+      "height": 4096,
+      "positions": [
+        { "type": "name", "x": 100, "y":160, "height":180 },
+        { "type": "health", "x": 630, "y": 2570 , "height":93},
+        { "type": "healthbar", "x": 860, "y": 2560,"height":70, "width":1300 },
+        { "type": "attack", "x": 630, "y": 2770 , "height":93},
+        { "type": "attackbar", "x": 860, "y": 2760,"height":70, "width":1300 },
+        { "type": "special", "x": 120, "y": 3160 },
+        { "type": "image", "x": 108, "y": 367, "width": 2151, "height": 1981 },
+        { "type": "id", "x": 108, "y": 4090,"height": 60 }
+      ]
+    },
+    "parts": [
+      {
+        "id": 0,
+        "seed": 8,
+        "length": 10,
+        "zindex": 1,
+        "bitposition": 3,
+        "baseUrl": "/codEbara/SmileyGen0/body",
+        "type": "visual",
+        "assets": [
+          {
+            "id": 0,
+            "names": ["yellow"],
+            "url": "/0.png"
+          },
+          {
+            "id": 1,
+            "names": ["red"],
+            "url": "/1.png"
+          },
+          {
+            "id": 2,
+            "names": ["pink"],
+            "url": "/2.png"
+          },
+          {
+            "id": 3,
+            "names": ["sky"],
+            "url": "/3.png"
+          },
+          {
+            "id": 4,
+            "names": ["blue"],
+            "url": "/4.png"
+          },
+          {
+            "id": 5,
+            "names": ["rainbow"],
+            "url": "/5.png"
+          },
+          {
+            "id": 6,
+            "names": ["broken rainbow"],
+            "url": "/6.png"
+          },
+          {
+            "id": 7,
+            "names": ["green"],
+            "url": "/7.png"
+          },
+          {
+            "id": 8,
+            "names": ["pastel"],
+            "url": "/8.png"
+          },
+          {
+            "id": 9,
+            "names": ["violet"],
+            "url": "/9.png"
+          }
+        ]
+      },
+      {
+        "id": 0,
+        "seed": 3,
+        "size": 10,
+        "zindex": 0,
+        "bitposition": 5,
+        "baseUrl": "/codEbara/SmileyGen0/eye",
+        "type": "visual",
+        "assets": [
+          {
+            "id": 0,
+            "names": ["dead"],
+            "url": "/0.png"
+          },
+          {
+            "id": 1,
+            "names": ["affraid"],
+            "url": "/1.png"
+          },
+          {
+            "id": 2,
+            "names": ["wtf"],
+            "url": "/2.png"
+          },
+          {
+            "id": 3,
+            "names": ["censored"],
+            "url": "/3.png"
+          },
+          {
+            "id": 4,
+            "names": ["cry"],
+            "url": "/4.png"
+          },
+          {
+            "id": 5,
+            "names": ["question"],
+            "url": "/5.png"
+          },
+          {
+            "id": 6,
+            "names": ["no speak"],
+            "url": "/6.png"
+          },
+          {
+            "id": 7,
+            "names": ["nervous"],
+            "url": "/7.png"
+          },
+          {
+            "id": 8,
+            "names": ["3d"],
+            "url": "/8.png"
+          },
+          {
+            "id": 9,
+            "names": ["happy"],
+            "url": "/9.png"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seed": 5,
+        "size": 10,
+        "zindex": 2,
+        "bitposition": 7,
+        "hasAttack":true,
+        "baseUrl": "/codEbara/SmileyGen0/weapons",
+        "type": "visual",
+        "assets": [
+          {
+            "id": 0,
+            "names": ["10 key"],
+            "url": "/0.png",
+            "attack":{
+              "name":"6-sided key",
+              "power":30
+            }
+          },
+          {
+            "id": 1,
+            "names": ["toilet"],
+            "url": "/1.png",
+            "attack":{
+              "name":"toilet",
+              "power":20,
+              "type":"multiple"
+            }
+          },
+          {
+            "id": 2,
+            "names": ["ping pong"],
+            "url": "/2.png"
+          },
+          {
+            "id": 3,
+            "names": ["ax"],
+            "url": "/3.png"
+          },
+          {
+            "id": 4,
+            "names": ["fire"],
+            "url": "/4.png"
+          },
+          {
+            "id": 5,
+            "names": ["poison"],
+            "url": "/5.png"
+          },
+          {
+            "id": 6,
+            "names": ["cutter"],
+            "url": "/6.png"
+          },
+          {
+            "id": 7,
+            "names": ["biohazard"],
+            "url": "/7.png"
+          },
+          {
+            "id": 8,
+            "names": ["brooms"],
+            "url": "/8.png"
+          },
+          {
+            "id": 9,
+            "names": ["hover"],
+            "url": "/9.png"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seed": 100,
+        "size": 3,
+        "bitposition": 2,
+        "type": "life",
+        "assets": [
+          { "id": 0, "value": 0.3 },
+          { "id": 0, "value": 0.6 },
+          { "id": 0, "value": 1 }
+        ]
+      },
+      {
+        "id": 4,
+        "seed": 5,
+        "size": 3,
+        "bitposition": 6,
+        "type": "attack",
+        "assets": [
+          { "id": 0, "value": 0.3 },
+          { "id": 1, "value": 0.6 },
+          { "id": 2, "value": 1 }
+        ]
+      }
+    ]
+  }
+}

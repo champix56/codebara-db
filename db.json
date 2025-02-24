@@ -6,16 +6,35 @@
     "gen": 0,
     "dateStart": "2025-02-23T00:00:00Z",
     "dateEnd": null,
-    "startUrl":"https://champix56.github.io/codebara-db",
+    "startUrl": "https://champix56.github.io/codebara-db",
+    "startUrldev": "http://localhost:5173",
+    "assetsWidth":4096,
+    "assetsHeight":4096,
+    "deck": {
+      "frontUrl": "/codEbara/front.png",
+      "backUrl": "/codEbara/back.png",
+      "width": 2370,
+      "height": 4096,
+      "positions": [
+        { "type": "name", "x": 100, "y":160, "height":180 },
+        { "type": "health", "x": 630, "y": 2570 , "height":93},
+        { "type": "healthbar", "x": 860, "y": 2560,"height":70, "width":1300 },
+        { "type": "attack", "x": 630, "y": 2770 , "height":93},
+        { "type": "attackbar", "x": 860, "y": 2760,"height":70, "width":1300 },
+        { "type": "special", "x": 120, "y": 3160 },
+        { "type": "image", "x": 108, "y": 367, "width": 2151, "height": 1981 },
+        { "type": "id", "x": 108, "y": 4090,"height": 60 }
+      ]
+    },
     "parts": [
       {
         "id": 0,
         "seed": 8,
-        "size": 10,
+        "length": 10,
         "zindex": 1,
         "bitposition": 3,
         "baseUrl": "/codEbara/SmileyGen0/body",
-        "type":"visual",
+        "type": "visual",
         "assets": [
           {
             "id": 0,
@@ -76,7 +95,7 @@
         "zindex": 0,
         "bitposition": 5,
         "baseUrl": "/codEbara/SmileyGen0/eye",
-        "type":"visual",
+        "type": "visual",
         "assets": [
           {
             "id": 0,
@@ -136,18 +155,28 @@
         "size": 10,
         "zindex": 2,
         "bitposition": 7,
+        "hasAttack":true,
         "baseUrl": "/codEbara/SmileyGen0/weapons",
-        "type":"visual",
+        "type": "visual",
         "assets": [
           {
             "id": 0,
             "names": ["10 key"],
-            "url": "/0.png"
+            "url": "/0.png",
+            "attack":{
+              "name":"6-sided key",
+              "power":30
+            }
           },
           {
             "id": 1,
             "names": ["toilet"],
-            "url": "/1.png"
+            "url": "/1.png",
+            "attack":{
+              "name":"toilet",
+              "power":20,
+              "type":"multiple"
+            }
           },
           {
             "id": 2,

@@ -1,0 +1,57 @@
+<svg height="4096" width="2370" viewBox="0 0 2370 4096" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient id="fadeBlackToRed" x1="0" x2="100%">
+            <stop offset="10%" stop-color="black" />
+            <stop offset="90%" stop-color="red" />
+        </linearGradient>
+        <g id="bar">
+            <circle cx="100" cy="50" r="50" fill="black" />
+            <circle cx="1600" cy="50" r="50" fill="red" />
+            <rect x="100" y="0" width="1500" height="100" fill="url(#fadeBlackToRed)" />
+        </g>
+        <g id="roundedrect">
+            <circle cx="25" cy="25" r="25" fill="grey"/>
+            <circle cx="1900" cy="25" r="25" fill="grey"/>
+
+            <circle cx="25" cy="200" r="25" fill="grey"/>
+            <circle cx="1900" cy="200" r="25" fill="grey"/>
+            <rect x="25" y="0" width="1875" height="225" fill="grey"/>
+            <rect x="0" y="25" width="1925" height="175" fill="grey"/>
+            </g>
+    </defs>
+    <g id="background">
+        <rect x="0" y="0" width="2370" height="4096" fill="skyblue" />
+    </g>
+    <g id="boder">
+        <rect x="0" y="0" width="50" height="4096" fill="yellow" />
+        <rect x="2320" y="0" width="50" height="4096" fill="yellow" />
+        <rect x="0" y="0" width="2370" height="50" fill="yellow" />
+        <rect x="0" y="4046" width="2370" height="50" fill="yellow" />
+    </g>
+    <g>
+        <rect x="100" y="350" width="2170" height="2000" fill="grey" />
+        <rect id="centralimage" x="110" y="360" width="2150" height="1980" fill="white" />
+    </g>
+    <g>
+        <rect x="100" y="350" width="2170" height="2000" fill="grey" />
+        <rect x="110" y="360" width="2150" height="1980" fill="white" />
+    </g>
+    <g id="staticTexts">
+        <text x="100" y="2500" font-size="130" text-decoration="underline">Specifications :</text>
+        <text x="130" y="2650" font-size="100">Health :</text>
+        <text x="460" y="2650" font-size="120" font-weight="900">100</text>
+
+        <use xlink:href="#bar" x="600" y="2575" />
+        <text x="130" y="2800" font-size="100">Attack :</text>
+        <text x="460" y="2800" font-size="120" font-weight="900">90</text>
+        <use xlink:href="#bar" x="600" y="2720" />
+        <text x="100" y="2950" font-size="130" text-decoration="underline">Specials :</text>
+        <use xlink:href="#roundedrect" x="200" y="3720" />
+
+    </g>
+    <g id="datas">
+        <text x="70" y="230" fill="black" font-size="130">Name</text>
+
+    </g>
+</svg>
