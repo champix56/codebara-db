@@ -34,13 +34,14 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const loadDeck = async (ctx: CanvasRenderingContext2D) => {
     const pr = await new Promise<HTMLImageElement>((resolve, reject) => {
-      if (type !== "card" || undefined === deck) return;
       const img = new Image();
+      if (type !== "card" || undefined === deck) return resolve(img);
       img.crossOrigin = "anonymous"; // Évite les problèmes CORS
       img.src = deck.frontUrl;
       img.onload = () => resolve(img);
       img.onerror = reject;
     });
+    if(pr.src==="")return;
 
     ctx.drawImage(pr, 0, 0, ctx.canvas.width, ctx.canvas.height);
     //name
