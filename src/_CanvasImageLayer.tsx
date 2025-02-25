@@ -7,10 +7,10 @@ interface CanvasImageLayerProps {
   height?: number;
   type: "card" | string;
   deck: IDeck;
-  name: string | null;
-  health: number | null;
-  attack: number | null;
-  id: string | null;
+  name: string;
+  health: number;
+  attack: number;
+  id: string;
   // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   onDrawn: Function;
 }
@@ -37,17 +37,12 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
 
     // Effacer le canvas avant de redessiner
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const loadDeck = async () => {
-      const pr = await new Promise<HTMLImageElement>((resolve, reject) => {
-        if (type !== "card" || undefined === deck) return;
-        const img = new Image();
-        img.crossOrigin = "anonymous"; // Évite les problèmes CORS
-        img.src = deck.frontUrl;
-        img.onload = () => resolve(img);
-        img.onerror = reject;
-      });
 
-      ctx.drawImage(pr, 0, 0, canvas.width, canvas.height);
+    if (type === "card" && undefined !== deck) {
+      const img = new Image();
+      img.crossOrigin = "anonymous"; // Évite les problèmes CORS
+      img.src = deck.frontUrl;
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
       //name
       ctx.beginPath();
       ctx.fillStyle = "black";
@@ -71,7 +66,6 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
       ctx.beginPath();
       position = deck.positions.find((p) => p.type === "healthbar");
       //@ts-ignore
-
       posX = position?.x + (position?.width / 100) * health;
       //@ts-ignore
       posY = position?.y + position?.height;
@@ -86,11 +80,9 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
       position = deck.positions.find((p) => p.type === "attack");
       posX = position?.x;
       //@ts-ignore
-
       posY = position?.y + position?.height;
       ctx.font = "bold " + position?.height + "px arial";
       //@ts-ignore
-
       ctx.fillText(attack.toString(), posX, posY);
       ctx.fill();
       ctx.closePath();
@@ -99,10 +91,8 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
       //@ts-ignore
       posX = position?.x + (position?.width / 100) * attack;
       //@ts-ignore
-
       posY = position?.y + position?.height;
       //@ts-ignore
-
       ctx.arc(posX, posY, position?.height, 0, 2 * Math.PI);
       ctx.fillStyle = "blue";
       ctx.fill();
@@ -118,9 +108,8 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
       ctx.font = "bold " + position?.height + "px arial";
       ctx.fill();
       ctx.closePath();
-    };
+    }
 
-    
     const loadImages = async () => {
       const imageElements = await Promise.all(
         images.map((src) => {
@@ -133,11 +122,11 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
           });
         })
       );
+
       let imgX = 0;
       let imgY = 0;
       let imgW = canvas.width;
       let imgH = canvas.height;
-
       // Dessiner chaque image chargée sur le canvas
       imageElements.forEach((img) => {
         if (type === "card" && undefined !== deck) {
@@ -163,7 +152,7 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
 
       onDrawn(canvas.toDataURL());
     };
-    loadDeck();
+
     loadImages();
   }, [images]);
 
