@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 //import {decode} from 'querystring'
 import "./App.css";
 import { theme } from "../db.json";

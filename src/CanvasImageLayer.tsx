@@ -5,7 +5,7 @@ interface CanvasImageLayerProps {
   images: string[];
   width?: number;
   height?: number;
-  type: "card" | "nude";
+  type: "card" | "nude" | string;
   deck: IDeck;
   name: string | null;
   health: number | null;
@@ -164,7 +164,7 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
       if (undefined !== onFirstDrawn) onFirstDrawn(canvas.toDataURL());
     }
 
-    if (undefined !== onFirstDrawn) onFirstDrawn(canvas.toDataURL());
+    if (undefined !== onDrawn) onDrawn(canvas.toDataURL());
   };
   useEffect(() => {
     drawCanvas();
