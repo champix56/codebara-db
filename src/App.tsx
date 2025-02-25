@@ -17,6 +17,7 @@ function App() {
   const images: Array<string> = [];
   const p = params.get("layers");
   const layers = JSON.parse(null !== p ? p : "");
+  theme.deck.frontUrl=theme.startUrl+ theme.deck.frontUrl;
   theme.parts
     .filter((e) => {
       return e.type === "visual";
