@@ -51,9 +51,10 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
     let posX = position?.x;
     //@ts-ignore
     let posY = position?.y + position?.height;
-    ctx.font = "bold" + position?.height + "px arial";
+    ctx.font = "bold " + position?.height + "px arial";
     //@ts-ignore
     ctx.fillText(name, posX, posY);
+     ctx.fill();
     //health
     position = deck.positions.find((p) => p.type === "health");
     posX = position?.x;
