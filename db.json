@@ -236,25 +236,19 @@
         "id": 3,
         "seed": 100,
         "size": 3,
+        "max":100,
+        "min":10,
         "bitposition": 2,
-        "type": "life",
-        "assets": [
-          { "id": 0, "value": 0.3 },
-          { "id": 0, "value": 0.6 },
-          { "id": 0, "value": 1 }
-        ]
+        "type": "life"
       },
       {
         "id": 4,
         "seed": 5,
         "size": 3,
+        "max":30,
+        "min":5,
         "bitposition": 6,
-        "type": "attack",
-        "assets": [
-          { "id": 0, "value": 0.3 },
-          { "id": 1, "value": 0.6 },
-          { "id": 2, "value": 1 }
-        ]
+        "type": "attack"
       }
     ]
   }
