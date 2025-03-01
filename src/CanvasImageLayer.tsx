@@ -142,7 +142,7 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
         });
         if (currentAsset.attack) {
           //@ts-ignore
-          ctx.fillText(currentAsset.attack.name, posX, posY);
+          ctx.fillText((element.type>0?element.type.toString()+"x ":"")+currentAsset.attack.name+" : "+element.v, posX, posY);
           posY += height;
         }
       });
