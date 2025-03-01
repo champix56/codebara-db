@@ -33,7 +33,7 @@
           "height": 70,
           "width": 1300
         },
-        { "type": "special", "x": 170, "y": 3220 },
+        { "type": "special", "x": 120, "y": 3160 },
         { "type": "image", "x": 108, "y": 367, "width": 2151, "height": 1981 },
         { "type": "id", "x": 108, "y": 4090, "height": 60 }
       ]
@@ -203,89 +203,113 @@
             "id": 2,
             "names": ["ping pong"],
             "url": "/2.png",
-            "bitposition": 46,
-            "seed": 123,
-            "factor": 0.3,
-            "min": 5,
-            "max": 13,
-            "type": "all"
+            "attack": {
+              "name": "ping pong",
+              "bitposition": 46,
+              "seed": 123,
+              "factor": 0.3,
+              "min": 5,
+              "max": 13,
+              "type": "all"
+            }
           },
           {
             "id": 3,
             "names": ["ax"],
             "url": "/3.png",
-            "bitposition": 23,
-            "seed": 123,
-            "factor":0.4,
-            "min":12,
-            "max":60,
-            "type":2
+            "attack": {
+              "name": "ax",
+              "bitposition": 23,
+              "seed": 123,
+              "factor": 0.4,
+              "min": 12,
+              "max": 60,
+              "type": 2
+            }
           },
           {
             "id": 4,
             "names": ["fire"],
             "url": "/4.png",
-            "bitposition": 56,
-            "seed": 89,
-            "factor":0.5,
-            "min":15,
-            "max":63,
-            "type":2
+            "attack": {
+              "name": "fire",
+              "bitposition": 56,
+              "seed": 89,
+              "factor": 0.5,
+              "min": 15,
+              "max": 63,
+              "type": 2
+            }
           },
           {
             "id": 5,
             "names": ["poison"],
             "url": "/5.png",
-            "bitposition": 23,
-            "seed": 123,
-            "factor":0.7,
-            "min":5,
-            "max":30,
-            "type":"all"
+            "attack": {
+              "name": "poison",
+              "bitposition": 23,
+              "seed": 123,
+              "factor": 0.7,
+              "min": 5,
+              "max": 30,
+              "type": "all"
+            }
           },
           {
             "id": 6,
             "names": ["cutter"],
             "url": "/6.png",
-            "bitposition": 62,
-            "seed": 41,
-            "factor":0.8,
-            "min":5,
-            "max":25,
-            "type":4
+            "attack": {
+              "name": "cutter",
+              "bitposition": 62,
+              "seed": 41,
+              "factor": 0.8,
+              "min": 5,
+              "max": 25,
+              "type": 4
+            }
           },
           {
             "id": 7,
             "names": ["biohazard"],
             "url": "/7.png",
-            "bitposition": 9,
-            "seed": 562,
-            "factor":0.6,
-            "min":5,
-            "max":60,
-            "type":2
+            "attack": {
+              "name": "biohazard",
+              "bitposition": 9,
+              "seed": 562,
+              "factor": 0.6,
+              "min": 5,
+              "max": 60,
+              "type": 2
+            }
           },
           {
             "id": 8,
             "names": ["brooms"],
             "url": "/8.png",
-            "bitposition": 23,
-            "seed": 123,
-            "factor":0.3,
-            "min":2,
-            "max":16,
-            "type":"all"
+            "attack": {
+              "name": "brooms",
+              "bitposition": 23,
+              "seed": 123,
+              "factor": 0.3,
+              "min": 2,
+              "max": 16,
+              "type": "all"
+            }
           },
           {
             "id": 9,
             "names": ["hover"],
             "url": "/9.png",
-            "bitposition": 46,
-            "seed": 15,
-            "factor":0.3,
-            "min":2,
-            "max":18,
-            "type":"all"
+            "attack": {
+              "name": "hover",
+              "bitposition": 46,
+              "seed": 15,
+              "factor": 0.3,
+              "min": 2,
+              "max": 18,
+              "type": "all"
+            }
           }
         ]
       },
@@ -295,7 +319,7 @@
         "size": 3,
         "max": 100,
         "min": 10,
-        "factor":0.7,
+        "factor": 0.7,
         "bitposition": 2,
         "type": "life"
       },
@@ -305,7 +329,7 @@
         "size": 3,
         "max": 30,
         "min": 5,
-        "factor":0.3,
+        "factor": 0.3,
         "bitposition": 6,
         "type": "attack"
       }
