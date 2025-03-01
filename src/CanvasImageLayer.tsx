@@ -41,7 +41,7 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
       img.onload = () => resolve(img);
       img.onerror = reject;
     });
-    if(pr.src==="")return;
+    if (pr.src === "") return;
 
     ctx.drawImage(pr, 0, 0, ctx.canvas.width, ctx.canvas.height);
     //name
@@ -54,7 +54,7 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
     ctx.font = "bold " + position?.height + "px arial";
     //@ts-ignore
     ctx.fillText(name, posX, posY);
-     ctx.fill();
+    ctx.fill();
     //health
     position = deck.positions.find((p) => p.type === "health");
     posX = position?.x;
