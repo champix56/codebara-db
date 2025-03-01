@@ -10,6 +10,8 @@ const attack = params.get("attack");
 const id = params.get("id");
 const images: Array<string> = [];
 const p = params.get("layers");
+let outH :number;
+let outW :number
 const gentype = params.get("type");
 function App() {
   const [base64, setbase64] = useState<string | undefined>(undefined);
@@ -26,18 +28,24 @@ function App() {
       return e.type === "visual";
     })
     .forEach((element, index) => {
+      //@ts-ignore
       element.assets.forEach((asset: any) => {
-        if (asset.id === layers[index])
+        if (asset.id === (typeof layers[index]==="number"?layers[index]:layers[index].id))
           images.push(theme.startUrl + element.baseUrl + asset.url);
       });
     });
-
+    const outHP = params.get("outh");
+     const outWP = params.get("outw");
   if (gentype === "card") {
     width = theme.deck.width;
     height = theme.deck.height;
+    outH=outHP!==null?parseInt(outHP):height
+    outW=outWP!==null?parseInt(outWP):width
   } else {
     width = theme.assetsWidth;
     height = theme.assetsHeight;
+    outH=outHP!==null?parseInt(outHP):256
+    outW=outWP!==null?parseInt(outWP):256
   }
   //setmounted(true);
   //}, []);
@@ -55,6 +63,12 @@ function App() {
           health={parseInt(health ? health : "0")}
           width={width}
           height={height}
+          layers={layers}
+          theme={theme}
+          outSize={{
+            width:outW,
+            height:outH
+          }}
           id={id}
           onFirstDrawn={(b: string) => {
             setbase64(b);

@@ -11,10 +11,13 @@ interface CanvasImageLayerProps {
   health: number | null;
   attack: number | null;
   id: string | null;
+  layers: number[];
+  outSize: { height: number; width: number };
   // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   onDrawn?: Function;
   // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   onFirstDrawn?: Function;
+  theme: {};
 }
 
 const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
@@ -29,6 +32,9 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
   onFirstDrawn,
   name,
   id,
+  outSize,
+  layers,
+  theme,
 }) => {
   let isAlreadyDrawn = false;
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -115,6 +121,33 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
     ctx.font = "bold " + position?.height + "px arial";
     ctx.fill();
     ctx.closePath();
+    if (type === "card") {
+      ctx.beginPath();
+      const height = 20;
+      ctx.font = "bold " + 120 + "px arial";
+      position = deck.positions.find((p) => p.type === "special");
+      ctx.fillStyle = "black";
+
+      posX = position?.x;
+      //@ts-ignore
+      posY = position?.y;
+      const visuals = theme.parts.filter((p) => p.type === "visual");
+      layers.forEach((element, index) => {
+        const currentAsset = visuals[index].assets.find((a) => {
+        
+
+          return a.id === (typeof element==="number"?element:element.id);
+        });
+        if (currentAsset.attack) {
+          //@ts-ignore
+          ctx.fillText(currentAsset.attack.name, posX, posY);
+          posY += height;
+        }
+      });
+
+      ctx.fill();
+      ctx.closePath();
+    }
   };
 
   const loadImages = async (ctx: CanvasRenderingContext2D) => {
@@ -166,8 +199,13 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
       if (undefined !== onFirstDrawn) onFirstDrawn(canvas.toDataURL());
     }
 
-    if (undefined !== onDrawn) onDrawn(canvas.toDataURL());
+    if (undefined !== onDrawn) {
+      canvas.height = outSize.height;
+      canvas.width = outSize.width;
+      onDrawn(canvas.toDataURL());
+    }
   };
+
   useEffect(() => {
     drawCanvas();
   }, []);
