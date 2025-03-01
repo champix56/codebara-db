@@ -131,11 +131,13 @@ const CanvasImageLayer: React.FC<CanvasImageLayerProps> = ({
       posX = position?.x;
       //@ts-ignore
       posY = position?.y;
-      const visuals = theme.parts.filter((p) => p.type === "visual");
-      layers.forEach((element, index) => {
-        const currentAsset = visuals[index].assets.find((a) => {
-        
+      //@ts-ignore
+      const visuals = theme.parts.filter((p:any) => p.type === "visual");
 
+      layers.forEach((element:number|{id:number,v:number}, index) => {
+        const currentAsset = visuals[index].assets.find((a:any) => {
+        
+//@ts-ignore
           return a.id === (typeof element==="number"?element:element.id);
         });
         if (currentAsset.attack) {
