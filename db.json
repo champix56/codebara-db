@@ -33,7 +33,7 @@
           "height": 70,
           "width": 1300
         },
-        { "type": "special", "x": 120, "y": 3160 },
+        { "type": "special", "x": 170, "y": 3230 },
         { "type": "image", "x": 108, "y": 367, "width": 2151, "height": 1981 },
         { "type": "id", "x": 108, "y": 4090, "height": 60 }
       ]
